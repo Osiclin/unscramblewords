@@ -80,9 +80,9 @@ function resultPage () {
 function congratsMsg() {
     if (result == 10) {
         document.getElementById('greet').innerHTML = 'EXCELLENT JOB <span style="font-size: 30px;">&#127942</span>';
-    } else if (result > 6 && score < 10) {
+    } else if (result > 6 && result < 10) {
         document.getElementById('greet').innerHTML = 'GOOD JOB <span style="font-size: 30px;">&#128578</span>';
-    } else if (result > 4 && score < 7) {
+    } else if (result > 4 && result < 7) {
         document.getElementById('greet').innerHTML = 'SOLID EFFORT <span style="font-size: 30px;">&#129488</span>';
     } else {
         document.getElementById('greet').innerHTML = 'POOR EFFORT <span style="font-size: 30px;">&#128580</span>';
