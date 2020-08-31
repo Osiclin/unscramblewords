@@ -40,9 +40,10 @@ function questionGenerate() {
     var c = document.getElementById('c');
     q.innerHTML = wordClueAns[sortq][0];
     c.innerHTML = '<b>Clue:</b> ' + wordClueAns[sortq][1];
+    $('#q').hide().fadeIn(1000);
+    $('#c').hide().fadeIn(1500);
     ans = wordClueAns[sortq][2];
     wordClueAns.splice(sortq, 1);
-    console.log(wordClueAns)
 }
 
 //Checks if the user input is same as answer to question
@@ -60,6 +61,8 @@ function checkAnswer () {
 //Generates result page
 function resultPage () {
     if ( questionNumber > 10 ) {
+        var removeForResult = document.getElementById('removeforresult');
+        removeForResult.remove();
         var playerName = sessionStorage.getItem('pn');
         html = '<h2>Result</h2>';
         html += '<div id="congrats"><span id="greet">nice try </span><span id="result">PLAYER</span></div>';
@@ -69,8 +72,6 @@ function resultPage () {
         content.innerHTML = html;
         document.getElementById('result').textContent = playerName;
         congratsMsg();
-        var removeForResult = document.getElementById('removeforresult');
-        removeForResult.style.display = 'none';
         sessionStorage.clear();
     }
 }
